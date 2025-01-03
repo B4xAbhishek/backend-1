@@ -32,7 +32,9 @@ app.get('/api-docs', swaggerUi.setup(specs, {
   customCss: '.swagger-ui .topbar { display: none }',
   customSiteTitle: "Account Management API Documentation",
   swaggerOptions: {
-    url: "/api-docs/swagger.json",
+    // url: "/api-docs/swagger.json",
+    displayRequestDuration: true,
+    persistAuthorization: true
   },
   // Remove customJs and customCssUrl as they're causing MIME type issues
 }));
