@@ -1,27 +1,23 @@
 {
-    "version": 2,
-    "builds": [
+  "version": 2,
+  "builds": [
       {
-        "src": "src/index.ts",
-        "use": "@vercel/node"
+          "src": "src/index.ts",
+          "use": "@vercel/node"
       }
-    ],
-    "routes": [
+  ],
+  "routes": [
       {
-        "src": "/api-docs/swagger\\.json",
-        "dest": "src/index.ts"
+          "src": "/api-docs/(.*)",
+          "dest": "src/index.ts"
       },
       {
-        "src": "/api-docs",
-        "dest": "src/index.ts"
+          "src": "/api/(.*)",
+          "dest": "src/index.ts"
       },
       {
-        "src": "/api/(.*)",
-        "dest": "src/index.ts"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "src/index.ts"
+          "src": "/(.*)",
+          "dest": "src/index.ts"
       }
-    ]
-  }
+  ]
+}

@@ -29,10 +29,12 @@ app.use('/api/auth', authRoutes);
 // In your index.ts file
 app.use('/api-docs', swaggerUi.serve);
 app.get('/api-docs', swaggerUi.setup(specs, {
-  customCss: '.swagger-ui .topbar { display: none }',
+  // customCss: '.swagger-ui .topbar { display: none }',
+  explorer: true,
   customSiteTitle: "Account Management API Documentation",
   swaggerOptions: {
-    url: "/api-docs/swagger.json",
+    // url: "/api-docs/swagger.json",
+    displayRequestDuration: true
   },
   // Remove customJs and customCssUrl as they're causing MIME type issues
 }));
